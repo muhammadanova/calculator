@@ -43,7 +43,7 @@ export default {
     return {
       count: '',
       sum: '',
-      operator: '',
+      // operator: '',
     }
   },
   methods: {
@@ -65,18 +65,18 @@ export default {
     },
     doPlus(operat){
       this.count = `${this.count}${operat}`;
-      this.operator = (a, b) => a + b;
-      this.setPrev()
+      // this.operator = (a, b) => a + b;
+      // this.setPrev()
     }, 
     doMinus(operat){
       this.count = `${this.count}${operat}`;
-      this.operator = (a, b) => a - b;
-      this.setPrev()
+      // this.operator = (a, b) => a - b;
+      // this.setPrev()
     },
     doTimes(operat){
       this.count = `${this.count}${operat}`;
-      this.operator = (a, b) => a * b;
-      this.setPrev()
+      // this.operator = (a, b) => a * b;
+      // this.setPrev()
     },
     setPrev(){
       this.prev = this.count;
