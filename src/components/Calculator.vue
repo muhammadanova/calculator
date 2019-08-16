@@ -15,20 +15,20 @@
     <div class="content-button">
       <span @click="doClear" class="clear">Clear</span>
       <span @click="doTimes('*')" class="operator4">X</span>
-      <span @click="append('1')" class="angka1">1</span>
-      <span @click="append('2')" class="angka2">2</span>
-      <span @click="append('3')" class="angka3">3</span>
+      <span @click="append(1)" class="angka1">1</span>
+      <span @click="append(2)" class="angka2">2</span>
+      <span @click="append(3)" class="angka3">3</span>
       <span @click="doPlus('+')" class="operator4">+</span>
-      <span @click="append('4')" class="angka1">4</span>
-      <span @click="append('5')" class="angka2">5</span>
-      <span @click="append('6')" class="angka3">6</span>
+      <span @click="append(4)" class="angka1">4</span>
+      <span @click="append(5)" class="angka2">5</span>
+      <span @click="append(6)" class="angka3">6</span>
       <span @click="doMinus('-')" class="operator4">-</span>
-      <span @click="append('7')" class="angka1">7</span>
-      <span @click="append('8')" class="angka2">8</span>
-      <span @click="append('9')" class="angka3">9</span>
+      <span @click="append(7)" class="angka1">7</span>
+      <span @click="append(8)" class="angka2">8</span>
+      <span @click="append(9)" class="angka3">9</span>
       <span @click="doPercentage" class="operator4">%</span>
       <span @click="doPlusMinus" class="operator1">+/-</span>
-      <span @click="append('0')" class="angka2">0</span>
+      <span @click="append(0)" class="angka2">0</span>
       <span @click="doDot" class="operator3">.</span>
       <span @click="doSum" class="operator4">=</span>
     </div>
@@ -37,6 +37,7 @@
 
 <script>
 import { parse } from 'path';
+import { constants } from 'crypto';
 export default {
   data () {
     return {
@@ -82,7 +83,9 @@ export default {
       this.operatorClick = true;
     },
     doSum() {
-      this.sum = this.count
+      // this.sum = this.count
+      const answer = eval(this.count).toString();
+      this.sum = answer
     },
     doDot(){
       if(this.count.indexOf('-') === -1){
